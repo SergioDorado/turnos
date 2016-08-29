@@ -1,0 +1,145 @@
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//localhost/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+<div>
+  <?php echo Html::img('turnos/FormularioMatriculacion.gif','Form Matriculacion','class="img-responsive img1"');?>
+</div>
+<hr id='sep'>
+<?php echo Form::open("matriculado/profesion/$identificador",'POST','id="form1"');?>
+        <?php echo Html::img('turnos/DatosProfesionales.gif','DatosProfTit','class="img.responsive img1"')?>
+        <!-------- Campos Ent formadora ----------->
+        <div class="row">
+           <div class="col-md-4 divinp">
+                <label id="lblentform">Inst. Formadora</label>
+           </div>
+            <div class="col-md-4 divinp">
+                <?php echo Form::dbSelect('mataux.codif_id','nombre',array('inst_form','instorde'),'--Seleccione--','class="inpform inplong"')?>
+            </div>
+            <!--<div class="col-md-3">
+                <?php// echo Form::button('seleccionar','onclick="return VentanaEmer1()"');?>
+            </div>-->
+           <!--<div class="col-md-3 divinp">
+                <?php// echo Form::dbSelect('mataux.codif_id','nombre',array('inst_form','InstFiltr',"$provincia"),'--Seleccione--','class="inpform inplong"')?>
+            </div>
+            <div class="col-md-3 divinp">
+                <?php// echo Form::dbSelect('dbfiltro','nombre',array('provincia','MostrarProv'),'','class="inpform inplong" onchange="return Filtro(this.id)"')?>
+            </div> -->
+            <div class="col-md-4 divinp">
+                <?php echo Form::check('otro','','id="otro" onchange="return CtrlCheck(this.id,dinstform), cambiarvalor(this.id,mataux_codif_id,mataux_instform)"',false )?>
+                <label id="lblotro">Otro</label>
+            </div>
+        </div>
+      <!-------------------------------------------------------------->
+        <div class="row" id="dinstform" style="display:none">
+            <div class="col-md-4"> 
+            </div>
+            <div class="col-md-4 divinp">
+                <?php echo Form::text('mataux.instform','class="inpform inplong" style="text-transform:uppercase" requiered')?>
+            </div>
+        </div>
+        
+        <!--------- Campos Profesion ---------->
+        <div class="row">
+            <div class="col-md-4 divinp">
+                <label id="lblprof">Profesión de referencia</label>
+            </div>
+            <div class="col-md-4 divinp">
+                <?php echo Form::dbSelect('mataux.prof_id','prf_refe',array('profecion','proforde'),'--Seleccione--','class="inpform inplong" onmouseover="return Mosprof(prof)" onmouseout="return Ocuprof(prof)"')?>
+            </div>
+            <div class="col-md-4">
+                <span id="prof"></span>
+            </div>
+        </div>
+        
+        <!---------- Campos Titulos ----------->
+        <div class="row">
+            <div class="col-md-4 divinp">
+                <label id="lbltit">Titulo</label>
+            </div>
+            <div class="col-md-4 divinp">
+                <?php echo Form::text('mataux.titulo','class="inpform inplong" onkeypress="return valideKey2(event)" style="text-transform:uppercase" required')?>
+            </div>
+        </div>
+        
+        <!----------- Campos Fecha de egreso-------->
+        <div class="row">
+            <div class="col-md-4 divinp">
+                <label id="lblfecegr">Fecha de título</label>
+            </div>
+            <div class="col-md-4 divinp">
+                <?php echo Form::text('mataux.fecegre','class="inpform datlong" onmouseover="return Mosfectit(fectit)" onmouseout="return Ocufectit(fectit)" onblur="return Largofec(this.id,fectit2)" onkeyup="return mascara(this.id)" onkeypress="return SoloNumFec(event,this.id,fechajs)" maxlength="10" required')?>
+            </div>                                     
+            <div class="col-md-4">
+                <span id="fectit2"></span>
+                <span style="display:block" id="fectit"></span>
+            </div>
+        </div>
+        
+        <!-----------Campos Revalida--------->
+        <div class="row">
+            <div class="col-md-4 divinp">
+                <label id="lblrev">Revalida</label>
+            </div>
+            <div class="col-md-4 divinp">
+                <fieldset>
+                <?php echo Form::radio('mataux.revalida','SI','name="rev" onchange="return SiReval(divrev)"'); ?>
+                    <label id="sirev">SI</label> 
+                  <?php    echo Form::radio('mataux.revalida','NO','name="rev" onchange="return NoReval(divrev)"',TRUE); ?>
+                    <label id="norev">NO</label> 
+            </fieldset>    
+            </div>
+        </div>
+        
+        <!------------------- Campos Entidad Ravalizacion---------->
+        <div class='row' id="divrev">
+            <div class='col-md-4 divinp'>
+                <label id="rev">Ent. Revalización</label>
+            </div>
+            <div class='col-md-4 divinp'>
+                <?php echo Form::dbSelect('mataux.entrevalidad_id','nombre',array('inst_form','instorde'),'--Seleccione--','class="inpform inplong"')?>
+            </div>
+        </div>
+        
+        
+        <hr id='sep'>
+        <?php echo Html::img('turnos/Terminos_Condiciones.gif','Terminos-tit','class=img-responsive img1')?>
+        <div>
+            <p id='pr1'> Declaro que todos los datos son reales. Los turnos tendrán una tolerancia máxima de 10 minutos  
+                desde la hora estipulada. Deberá presentar la totalidad de los requisitos en la forma solicitada. 
+                El presente formulario no podrá ser modificado posteriormente, es por esto que le pedimos que 
+                verifique los datos antes de continuar</p>
+        </div>
+        <br>
+        <div class='row'>
+            <div class='col-md-3'>
+               <!--- Culumna margen ---> 
+            </div>
+            <div class='col-md-9'>
+                <?php echo Form::check('chek','value=""','required');?>
+                <label>Declaro haber leido y aceptado los Términos y Condiciones</label>
+            </div>
+        </div>
+        <hr id='sep'>
+        <div class="row">
+           <div class="col-md-6 divbtn">
+            <b> <?php echo Form::submitImage('turnos/BtnGuardar.png','class="btnefe btnReduc" onsubmit="" onclick="return mayus2()"') ?> </b>
+           </div> 
+            <div class="col-md-6 divbtn">
+                 <a href='/turnos/matriculado/index'>
+                   <?php echo Html::img('turnos/BtnCancelar.gif', 'Cancelar', 'class="btnefe btnReduc"')?>
+                </a>  
+            </div>
+            
+        </div>
+<?php echo Form::close() ?>
+<?php echo View::content()?>

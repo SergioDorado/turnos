@@ -1,0 +1,75 @@
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//localhost/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+<?php ?>
+
+<br>
+<?php echo Form::open('matriculado/consultas','POST','id="formcons" class="form-horizontal"');?>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-lg-7">
+        <div class="form-group divinp">
+            <label class="control-label col-md-3">Ingrese su Nro de Documento</label>
+            <div class="col-md-3">
+                <?php echo Form::text('dnicons','class="form-control" maxlength="8" onkeypress="return valideKey(event)" onblur="return largoDni2(this.id,errdni)" required');?>
+                <span id="errdni" class="help-block"></span>
+            </div>
+            <div class="col-md-3 ">
+                
+                 <?php echo Form::submitImage('turnos/BtnBuscar.png','class="btnefe btnReduc" onclick="return MostObj(infoconsulta)"')?>
+            </div>
+            <div class="col-md-3">
+                <a href='/turnos/matriculado/index'>
+                    <?php echo Html::img('turnos/BtnCancelar.gif', 'Cancelar', 'class="btnefe btnReduc"')?>
+                </a> 
+            </div>
+        </div>  
+    </div>
+</div>
+
+
+<br/>
+ <?php echo Form::close()?>
+<?php echo View::content()?>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <tr class="active">
+            <th>Dni</th>
+            <th>Nombre  </th>
+            <th>Apellido  </th>
+            <th>Fecha de turno</th>
+            <th>Horario </th>
+            <th>Profesion</th>
+            <th>Imprimir Turno</th>
+        </tr>
+        <?php $ban= true;?>
+        <?php foreach($listamataux as $item):?>
+        <tr class="warning">
+            <?php if(Load::model('matriculado')->CoparaFecha($item->ConsTurnoFecha($item->id))){
+                $ban=false;
+                echo "<td>".$dni."</td>";
+                echo "<td>".$nombre."</td>";
+                echo "<td>".$apellido."</td>";
+                echo "<td>".Load::model('turnos')->Formatofeha($item->ConsTurnoFecha($item->id))."</td>";
+                echo "<td>".Load::model('turnos')->TransformarHorario($item->ConsTurnoHorario($item->id))."</td>";
+                echo "<td>".$item->ConsultarProfesion($item->prof_id)."</td>";
+                echo "<td>".Html::linkAction("asignar2/$item->id", 'Imprimir','target="blank"')."</td>";
+            } ?>
+        </tr>
+        <?php endforeach;?>
+        <?phpif($ban)
+            {?>
+                <div id="infoconsulta" class='alert alert-info' style="display:none">Usted no pose turnos vigentes.</div>
+            <?php} ?>
+    </table>
+</div>

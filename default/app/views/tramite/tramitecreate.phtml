@@ -1,0 +1,125 @@
+<?php echo View::content() ?>
+<?php echo Form::open("tramite/tramitecreate/$dniE",'POST','id=tramiteform');?>
+<!------------ Tipo Tramite-------------->
+<div class='row'>
+    <div class='col-md-4 divinp'>
+        <label id='seleclbl'>Seleccione el tipo de tramite</label>
+    </div>
+    <div class='col-md-4 divinp'>
+        <?php $arr =array('Constancia de matricula activa','Baja de matricula','Certificacion de libre sancion profesional');?>
+        <?php echo Form::select('tramite.tramite',$arr,'class="inpform inplong"','--Seleccione--')?>
+    </div>
+</div>
+
+
+<!-------- DNI -------->
+
+<div class='row'>
+        
+        <div class='col-md-4 divinp'>
+            <label>Documento</label>
+           </div> 
+        <div class='col-md-4 divinp'>
+            <?php echo Form::text('tramite.dni','id="dni" maxlength="8" class="inpform inplong" onkeypress="return valideKey(event)" onblur="return largoDni2(this.id,errdni)"  disabled',"$dniE") ?>  
+           
+            <br>
+            
+        </div> 
+        <div class="col-md-4">
+            <span id="errdni"></span>
+        </div>
+    </div>
+
+<!--------- Apellido------->
+
+    <div class='row'>
+           <div class='col-md-4 divinp'>
+              <label id="lblape">Apellido y Nombre</label> 
+           </div>
+           <div class='col-md-4 divinp'>
+              <?php echo Form::text('tramite.apellido','class="inpform inplong" onkeypress="return valideKey2(event)" style="text-transform:uppercase" disabled',"$apynom") ?>
+           </div>
+   </div>    
+       
+<!------------- campo Telefono---------->
+<div class='row'>
+    <div class='col-md-4 divinp'>
+        <label id='lbltel'>Telefono</label>
+    </div>
+    <div class='col-md-4 divinp'>
+        <?php echo Form::text('tramite.telefono','class="inpform inplong" onkeypress="return valideKey(event)" maxlength="11"  required') ?>
+    </div>
+</div>
+
+  <!-------------Campos Email ---------->
+        <div class="row">
+            <div class="col-md-4 divinp">
+                <label id="lblmail">E-Mail</label>
+            </div>
+            <div class="col-md-4 divinp">
+                <?php echo Form::text('tramite.mail','class="inpform inplong" onblur="return validarEmail2(this.value,errmail)" required') ?>
+            </div>
+            <div class="col-md-4">
+                <span id="errmail"></span>
+            </div>
+        </div>
+  
+  
+  <!----------- MATRICULA -------->
+  <div class='row'>
+      <div class='col-md-4 divinp'>
+          <label id='lblmat'>Matricula</label>
+      </div>
+     <div class='col-md-4 divinp'>
+          <?php// echo Form::text('tramite.matricula','class="inpform inplong" maxlength="5" disabled',"$matricula")?>
+         <select id="tramite_matricula" name="tramite[matricula]" class="inpform inplong">
+             <?php foreach ($listarefp as $item):
+                 echo "<option value='$item->matricula'>$item->matricula</option>";
+             endforeach; ?>
+         </select>
+      </div>
+     <div>
+         
+     </div>
+  </div>
+  
+   <!--------- Campos Profesion ---------->
+        <div class="row">
+            <div class="col-md-4 divinp">
+                <label id="lblprof">Profesión de referencia</label>
+            </div>
+           <!-- <div class="col-md-4 divinp">
+                <?php// echo Form::dbSelect('tramite.codprof_id','prf_refe',array('profecion','proforde'),'--Seleccione--','class="inpform inplong" onmouseover="return Mosprof(prof)" onmouseout="return Ocuprof(prof)"')?>
+            </div> -->
+         <div class='col-md-4 divinp'>
+             <select id="tramite_codprof_id" name="tramite[codprof_id]" class="inpform inplong" onmouseover="return Mosprof(prof)" onmouseout="return Ocuprof(prof)">
+             <?php foreach ($listarefp as $item):
+                 echo "<option value='$item->cod_prof'>$item->profesion</option>";
+             endforeach; ?>
+             </select>
+         </div>
+            <div class="col-md-4">
+                <span id="prof"></span>
+            </div>
+        </div>
+   </br>
+   <div class="row">
+       <div class="col-md-3">
+           
+       </div>
+        <div class="col-md-3 divbtn">
+            <b> <?php echo Form::submitImage('turnos/BtnGuardar.png','class="btnefe btnReduc" onsubmit="return mayustram()"') ?> </b>
+        </div>
+       <div class="col-md-3 divbtn">
+           <a href='/turnos/matriculado/index'>
+              <?php echo Html::img('turnos/BtnCancelar.gif', 'Cancelar', 'class="btnefe btnReduc"')?>
+           </a>  
+       </div>
+   </div>
+   
+   
+   </br>
+
+   
+   
+   <?php echo Form::close() ?>

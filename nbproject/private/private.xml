@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/turnos/default/public/javascript/validaciones.js</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/controllers/matriculado_controller.php</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/views/tramite/verificar2.phtml</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/controllers/tramite_controller.php</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/views/matriculado/consultas.phtml</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/models/turnos.php</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/views/tramite/tramitecreate.phtml</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/views/matriculado/asignar.phtml</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/views/matriculado/create.phtml</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/models/mataux.php</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/models/refeps.php</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/views/matriculado/asignar2.phtml</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/views/matriculado/profesion.phtml</file>
+            <file>file:/C:/xampp/htdocs/turnos/default/app/models/matriculado.php</file>
+        </group>
+    </open-files>
+</project-private>

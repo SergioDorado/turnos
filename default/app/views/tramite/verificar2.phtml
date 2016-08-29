@@ -1,0 +1,28 @@
+<?php echo Form::open('tramite/verificar2','POST','id="formexiste" class="form-inline" role="form"') ?>
+
+<br/>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-lg-4 divinp">
+        <div class="form-group">
+            <label class="control-label">DNI</label>
+            <?php echo Form::text('ExisteDni2','class="form-control" maxlength="8" onkeypress="return valideKey(event)" onblur="return largoDni2(this.id,errdni)" required ');?>
+            <span id="errdni" class="help-block"></span>
+        </div>
+        <div class="form-group ">
+           
+            <?php echo Form::submitImage('turnos/BtnBuscar.png','class="btnefe btnReduc" onclick="return CtrlarDni(ExisteDni)"')?>
+        </div>
+        <div class="form-group">
+            <a href='/turnos/matriculado/index'>
+            <?php echo Html::img('turnos/BtnCancelar.gif', 'Cancelar', 'class="btnefe btnReduc"')?>
+            </a> 
+        </div>
+    </div>
+    <div class="col-md-4">
+ 
+    </div>
+</div>
+
+<?php echo Form::close();?>
+<?php echo View::content()?>

@@ -1,0 +1,267 @@
+
+/* estilo para centrar la pagina */
+#gene{  
+position: relative;
+text-align: center;
+/*left: 15%;
+right:15%;*/
+width: 100%;
+margin-bottom:0px;
+padding-bottom:0px;
+}
+/* estilo del body */
+#bod{
+	position: relative;
+	/*left: 15%;
+	right:15%;
+	width: 960px;*/
+	border: solid 30px;
+	border-color: #09A8A7;
+	display: block;
+	max-width: 100%;
+	height: auto;
+	background-image: url(../../img/turnos/FondoRayas.gif);
+
+}
+
+/* linea separadora dentro del form*/
+#sep{
+	color:#3BA0A8;
+	border: solid 2px;
+}
+/* imagenes titulos dentro del form*/
+.img1{
+	position: relative;
+	margin-left: 15px;
+	margin-top: 10px;
+	text-align: left;
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Alineacion de los label del formulario de carga*/
+.txtform{
+	position: relative;
+	text-align: left;
+	left: 100px;
+	/*text-align: center;*/
+}
+
+.divinp{
+	text-align: center;
+}
+
+.divder{
+	text-align: right;
+}
+
+/* espaciado entre campos*/
+.inpform{
+	margin-bottom: 5px;
+}
+
+.divbtn{
+	text-align: center;
+}
+
+.btnsub{
+	background-color: #3BA0A8;
+	border:outset;
+	border-color: #34898F;
+	padding: 1px;	
+	height: 45px;
+	width: 100px;
+	
+
+}
+.inplong{
+	width: 246px;
+}
+
+.datlong{
+	width: 246px;
+}
+/* posicionamiento de elementosa del form de carga*/
+#pr1{
+	margin-left: 30px;
+	margin-right: 15px;
+}
+
+#lbldni{
+	position: relative;
+	left: 30px;
+}
+
+#lblcuil{
+	position: relative;
+	left: -26px;
+}
+
+#lblape{
+	position: relative;
+	left: -11px;
+}
+
+#lblnom{
+	position: relative;
+	left: -13px;
+}
+
+#lblnac{
+	position: relative;
+	left: 32px;
+}
+
+#lbllugnac{
+	position: relative;
+	left: 45px;
+}
+
+#lblnacionalidad{
+	position: relative;
+	left: 6px;
+}
+
+#lblsex{
+	position: relative;
+	left: -23px;
+}
+
+#lblmail{
+	position: relative;
+	left: -18px
+}
+
+#lblentform{
+	position: relative;
+	left: 12px;
+}
+
+#lblprof{
+	position: relative;
+	left: 39px;
+}
+
+#lbltit{
+	position: relative;
+	left: -21px;
+}
+
+#lblfecegr{
+	position: relative;
+	left: 7px;
+}
+
+#lblrev{
+	position: relative;
+	left: -11px;
+}
+
+#lbltel{
+	position: relative;
+	left: -10px;
+}
+
+#lblmat{
+	position: relative;
+	left: -10px;
+}
+
+#rev{
+	position: relative;
+	left: 19px;
+}
+
+
+#otro{
+	position: relative;
+	left: -95px;
+}
+
+#lblotro{
+	position: relative;
+	left: -95px;
+}
+
+#viewcontent{
+	position: relative;
+	left: 30px;
+	top: 10px;
+}
+#divrev{
+	display:none;
+}
+
+.info{
+	position:relative;
+	left:40px;
+	top: 60px;
+}
+
+.paneles{
+	position: relative;
+	margin-left: 55px;
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.panel-heading:hover{
+	cursor:pointer;
+}
+
+.informacion{
+	position: relative;
+	margin-left:55px;
+	margin-right:20px;
+}
+/*Efecto de boton*/
+.btnefe{
+	
+	border-radius: 8px;
+
+	-moz-box-shadow: 0px 5px 0px 0px rgb(9, 168, 167);
+
+	-webkit-box-shadow: 0px 5px 0px 0px rgb(9, 168, 167);
+
+	box-shadow: 0px 5px 0px 0px rgb(9, 168, 167);
+
+	margin:0px 10px 10px 0px;
+
+	padding:1px;
+
+	transition: all 0.10s ease-in-out;
+
+	-webkit-transition: all 0.10s ease-in-out;
+
+	position:relative;
+
+}
+
+
+.btnefe:hover{
+	top:4px;
+
+	-moz-box-shadow: 0px 2px 0px 0px rgb(9, 168, 167);
+
+	-webkit-box-shadow: 0px 2px 0px 0px rgb(9, 168, 167);
+
+	box-shadow: 0px 2px 0px 0px rgb(9, 168, 167);
+}
+
+/* id div verificacion*/
+#verif{
+	padding:10px;
+}
+
+.btnReduc /* clase para reducir los botones grandes*/
+{
+	width: 140px;
+	height: 50px;
+}
+
+/*id div declaracion jurada*/
+#DeclaracionJurada
+{
+	display: none;
+}

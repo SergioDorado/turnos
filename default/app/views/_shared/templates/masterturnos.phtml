@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Turnos</title>
+
+        <?php Tag::css('turnos/bootstrap') ?>
+        <?php Tag::css('turnos/general') ?>
+        <?php echo Tag::js('jquery/jquery.min')?>
+        <?php echo Tag::js("validaciones")?>
+
+        <?php// echo Html::headLink('/turnos/img/turnos/Icono.ico', "rel='shortcut icon',type='image/x-icon'") ?>
+        <link rel="shortcut icon" type="image/x-icon" href="/turnos/img/turnos/Icono.ico" />
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--        <script type="text/javascript" scr="../../../public/javascript/turnos/validaciones.js"></script>-->
+<!--        <script src="/scripts/jquery.min.js"></script>        
+ <script src='https://www.google.com/recaptcha/api.js'></script>
+ <script  type="text/javascript" src="./style/js/validar.js"></script>-->
+
+        <?php echo Html::includeCss() ?>
+        <script type="text/javascript"> 
+            var fechajs =new Date(); // fecha actual tomada del sistema
+            fechajs.setFullYear(<?php echo intval(date('Y')) ?>);
+            fechajs= fechajs.getFullYear();
+        </script>
+        <script type="text/javascript"> 
+            var fechaedadjs =new Date(); //fecha actual tomada del sistema -17 años
+            fechaedadjs.setFullYear(<?php echo intval(date('Y')) ?>);
+            fechaedadjs= (fechaedadjs.getFullYear()-17);
+        </script>
+
+    </head>
+    <body>
+        <header>
+            <?php View::partial('turnos/cabecera') ?>
+        </header>    
+            <div  id='bod'>
+                
+                 
+                <?php View::content() ?>
+            </div>
+       
+        <footer>
+            <?php View::partial('turnos/piepag') ?>
+        </footer>
+        
+    </body>
+</html>

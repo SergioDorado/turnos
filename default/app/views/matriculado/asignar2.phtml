@@ -1,0 +1,59 @@
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//localhost/piwik/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 2]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>  
+
+<div class='row'>
+    <div  class='col-md-6'>
+        <?php echo Html::img('turnos/SuTurno.gif', 'Datos Turno','class="img-responsive img1"');?>
+        <h4 style="position:relative; left:30px; top:20px;"> 
+        <?php echo "Nº$tur, a $hor, el dia $fech"//View::content() ?>
+        </h4>
+        <br>
+    </div>
+    <div class='col-md-6'>
+        <?php echo Html::img('turnos/Lugar.gif', 'Lugar turno','class="img-responsive img1"');?>
+        <h4 style="position:relative; left:30px; top:10px;"> Pasaje Ernesto Claros N°75 Dpto. 16 
+            San Salvador de Jujuy.<br/>
+            <p>Telefono: (0388) - 4233211</p>
+            <p>E-mail: matriculacionsalud@gmail.com</p>
+        </h4>  
+    </div>
+</div>
+<div>
+    <h3 style=" position:relative; left:15px"><b> Datos personales:</b> </h3> 
+    <h4 style="position:relative; left:35px">Nombre: <?php echo $nom ?></h4>
+    <h4 style="position:relative; left:35px">Apellido: <?php echo $ape?></h4>
+    <h4 style="position:relative; left:35px">DNI: <?php echo $doc?></h4>
+</div>
+
+<div id="DeclaracionJurada">
+    <h3 style="position:relative; left: 30%">Declaración Jurada de datos de contacto</h3>
+    <h4 style="position:relative; left: 9%">Quien suscribe:     <?php echo $ape?>, <?php echo $nom ?>. </h4>
+    <h4 style="position:relative; left: 9%">DNI Nº:     <?php echo $doc?> .</h4>
+    <br>
+    <?php echo Html::img('turnos/DeclaracionJurada.gif','DecJurada','class="img-responsive img1" style=" position:relative; left:15px"');?>
+</div>
+<br>
+<div class="container-fluid">
+<?php echo Html::img('turnos/atencion.jpg','Atencion','class="img-responsive img1"');?>
+</div>
+<br/>
+<div class="row">
+    <div class="col-md-4 divinp" id="BtnImp">
+        <?php echo Form::submitImage('turnos/Imprimir.png', 'class="btnefe btnReduc" alt="Imprimir" onclick="return imprimir(BtnImp,BtmSalir,DeclaracionJurada)"');?>
+    </div>
+</div>
+<div class="divinp" id="BtmSalir">
+    <a href="/turnos/matriculado/index">
+        <?php echo Html::img('turnos/BtnFinalizar.png', 'Finalizar', 'class="btnefe btnReduc"');?>
+    </a>
+</div>

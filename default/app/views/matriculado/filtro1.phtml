@@ -1,0 +1,9 @@
+<?php echo Form::open("matriculado/filtro/$provincia",'POST','id="form1"')?>
+ <div class="col-md-3 divinp">
+    <?php echo Form::dbSelect('mataux.codif_id','nombre',array('inst_form','InstFiltr',"$provincia"),'--Seleccione--','class="inpform inplong"')?>
+</div>
+<div class="col-md-3 divinp">
+    <?php echo Form::dbSelect('dbfiltro','nombre',array('provincia','MostrarProv'),'--Seleccione Provincia--','class="inpform inplong" onchange="return Filtro(this.id)"')?>
+</div>
+
+
